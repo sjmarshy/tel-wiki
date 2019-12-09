@@ -1,0 +1,15 @@
+<script>
+    function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
+    r(function () {
+        const anchors = Array.prototype.slice.call(document.getElementsByTagName('a'));
+        anchors.filter(a => a.href.includes('.md')).forEach(a => {
+            a.href = a.href.replace('.md', '.html');
+        });
+    });
+</script>
+<style>
+.figure img { 
+    width: 80%;
+    margin: 0 10%;
+}
+</style>

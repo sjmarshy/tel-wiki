@@ -1,0 +1,17 @@
+{
+  "name": "public-notes",
+  "version": "1.0.0",
+  "author": "Sam Marshall <sjmarshy@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "yarn clean && mkdir site && node scripts/build.js",
+    "deploy": "yarn build; cp ./now.json ./site/now.json; cd ./site; now --prod;cd ..",
+    "start": "nodemon -e md -w src --exec 'yarn build; now dev ./site'",
+    "clean": "rm -rf site"
+  },
+  "devDependencies": {
+    "execa": "^2.1.0",
+    "glob": "^7.1.4",
+    "nodemon": "^1.19.4"
+  }
+}
